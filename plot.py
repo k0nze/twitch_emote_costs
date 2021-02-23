@@ -29,7 +29,7 @@ tier_2_cost = 9.99
 tier_3_cost = 24.99
 
 # enter max months to plot (has to start with 1)
-months = np.arange(1, 24)
+months = np.arange(1, 38)
 
 bit_emotes_1_costs = np.full(months.shape, 13.31)
 bit_emotes_2_costs = np.full(months.shape, 67.51)
@@ -56,6 +56,11 @@ plt.plot(months, tier_3_costs)
 plt.ylabel('Accumulated Cost [€]')
 plt.xlabel('Months')
 
-plt.legend(("1K bits emote", "5K bits emote", "10K bits emote", "Tier 1 sub emotes", "Tier 2 sub emotes", "Tier 3 sub emotes"))
+plt.xticks(months[::2])
+
+plt.suptitle('Twitch Emote Costs', fontsize=16, y=0.98)
+plt.title('(Based on German Euro Browser Prices)')
+
+plt.legend(("1K bits emote", "5K bits emotes", "10K bits emotes", "Tier 1 sub emotes", "Tier 2 sub emotes", "Tier 3 sub emotes"))
 
 plt.show()
